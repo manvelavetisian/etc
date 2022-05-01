@@ -94,7 +94,7 @@
 (global-set-key (kbd "C-r") 'ivy-resume)
 (global-set-key (kbd "C-s") 'swiper)
 
-;; sudo apt-get install clang-tools
+;; sudo apt-get install clangd
 ;; pip3 install 'python-lsp-server[all]'
 (use-package company)
 (use-package lsp-mode)

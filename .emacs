@@ -52,6 +52,7 @@
 (setq undo-strong-limit (* 64 1024 1024))
 (setq uniquify-buffer-name-style 'post-forward)
 (setq-default save-place 1)
+(setq-default show-trailing-whitespace 1)
 
 ;; tip: C-u C-x = to get a name of face under cursor and some additional info
 ;; tip: M-x customize-themes to browse themes
@@ -200,7 +201,7 @@
 (defun my-python-mode-hook ()
   (local-set-key (kbd "C-c <") 'python-indent-shift-left)
   (local-set-key (kbd "C-c >") 'python-indent-shift-right)
-  (local-set-key (kbd "C-c p") 'py-autopep8))
+  (local-set-key (kbd "C-c f") 'py-autopep8))
 
 (add-hook 'c-mode-common-hook 'my-programming-modes-hook)
 (add-hook 'c-mode-hook 'my-c-c++-mode-hook)

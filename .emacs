@@ -201,7 +201,7 @@
 (defun my-python-mode-hook ()
   (local-set-key (kbd "C-c <") 'python-indent-shift-left)
   (local-set-key (kbd "C-c >") 'python-indent-shift-right)
-  (local-set-key (kbd "C-c f") 'py-autopep8))
+  (local-set-key (kbd "C-c C-f") 'py-autopep8))
 
 (add-hook 'c-mode-common-hook 'my-programming-modes-hook)
 (add-hook 'c-mode-hook 'my-c-c++-mode-hook)

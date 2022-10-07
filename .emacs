@@ -33,11 +33,9 @@
 (require 'saveplace)
 (require 'paren)
 (require 'uniquify)
-(require 'recentf)
 
 (global-font-lock-mode 1)
 (global-subword-mode 1)
-(recentf-mode 1)
 (savehist-mode 1)
 (show-paren-mode 1)
 (transient-mark-mode 1)
@@ -60,6 +58,10 @@
 (add-to-list 'custom-theme-load-path "~/etc/darkokai")
 (setq darkokai-mode-line-padding 1)
 (load-theme 'darkokai t)
+
+(use-package which-key)
+(which-key-mode)
+(which-key-setup-side-window-right)
 
 ;; ivy, swiper, and counsel
 (use-package ivy)
@@ -92,6 +94,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-x C-r") 'counsel-recentf)
 
+;; press C-q to query-replace once in swiper mode
 (global-set-key (kbd "C-r") 'ivy-resume)
 (global-set-key (kbd "C-s") 'swiper)
 
@@ -102,6 +105,8 @@
 (use-package lsp-ui)
 (use-package yasnippet)
 (use-package py-autopep8)
+(use-package anaconda-mode)
+(use-package company-anaconda)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -199,9 +204,18 @@
   (c-set-style "my-cc-style"))
 
 (defun my-python-mode-hook ()
+  (anaconda-mode)
+  (add-to-list 'company-backends 'company-anaconda)
+
   (local-set-key (kbd "C-c <") 'python-indent-shift-left)
   (local-set-key (kbd "C-c >") 'python-indent-shift-right)
-  (local-set-key (kbd "C-c C-f") 'py-autopep8))
+  (local-set-key (kbd "C-c C-f") 'py-autopep8)
+
+  (local-set-key (kbd "C-c C-h") 'anaconda-mode-show-doc)
+  (local-set-key (kbd "C-c C-a") 'anaconda-mode-find-assignments)
+  (local-set-key (kbd "C-c C-c") 'anaconda-mode-complete)
+  (local-set-key (kbd "C-c C-d") 'anaconda-mode-find-definitions)
+  (local-set-key (kbd "C-c C-x") 'anaconda-mode-find-references))
 
 (add-hook 'c-mode-common-hook 'my-programming-modes-hook)
 (add-hook 'c-mode-hook 'my-c-c++-mode-hook)

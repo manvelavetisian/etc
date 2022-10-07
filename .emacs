@@ -59,10 +59,6 @@
 (setq darkokai-mode-line-padding 1)
 (load-theme 'darkokai t)
 
-(use-package which-key)
-(which-key-mode)
-(which-key-setup-side-window-right)
-
 ;; ivy, swiper, and counsel
 (use-package ivy)
 (use-package swiper)
@@ -76,6 +72,14 @@
 
 (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-immediate-done)
 (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+
+;; make remembering key sequences a bit easier
+(use-package which-key)
+(which-key-mode)
+(which-key-setup-side-window-right)
+
+(use-package embark)
+(global-set-key (kbd "M-c") 'embark-act)
 
 ;; key bindings
 (global-set-key (kbd "M-n") 'forward-paragraph)

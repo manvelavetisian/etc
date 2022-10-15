@@ -78,9 +78,6 @@
 (which-key-mode)
 (which-key-setup-side-window-right)
 
-(use-package embark)
-(global-set-key (kbd "M-c") 'embark-act)
-
 ;; key bindings
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -107,10 +104,7 @@
 (use-package company)
 (use-package lsp-mode)
 (use-package lsp-ui)
-(use-package yasnippet)
 (use-package py-autopep8)
-(use-package anaconda-mode)
-(use-package company-anaconda)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -184,7 +178,9 @@
   (setq-local linum-format (if window-system "%4d" "%4d "))
 
   (setq-default indent-tabs-mode nil)
-  (setq tab-width 2)
+  (setq tab-width 4)
+
+  (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
   (lsp)
   (local-set-key (kbd "TAB") 'company-indent-or-complete-common)
@@ -208,18 +204,9 @@
   (c-set-style "my-cc-style"))
 
 (defun my-python-mode-hook ()
-  (anaconda-mode)
-  (add-to-list 'company-backends 'company-anaconda)
-
   (local-set-key (kbd "C-c <") 'python-indent-shift-left)
   (local-set-key (kbd "C-c >") 'python-indent-shift-right)
-  (local-set-key (kbd "C-c C-f") 'py-autopep8)
-
-  (local-set-key (kbd "C-c C-h") 'anaconda-mode-show-doc)
-  (local-set-key (kbd "C-c C-a") 'anaconda-mode-find-assignments)
-  (local-set-key (kbd "C-c C-c") 'anaconda-mode-complete)
-  (local-set-key (kbd "C-c C-d") 'anaconda-mode-find-definitions)
-  (local-set-key (kbd "C-c C-x") 'anaconda-mode-find-references))
+  (local-set-key (kbd "C-c C-f") 'py-autopep8))
 
 (add-hook 'c-mode-common-hook 'my-programming-modes-hook)
 (add-hook 'c-mode-hook 'my-c-c++-mode-hook)

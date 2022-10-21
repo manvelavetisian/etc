@@ -24,6 +24,7 @@ true-color = true
 "A-n" = "goto_next_paragraph"
 "A-p" = "goto_prev_paragraph"
 "A-x" = "command_mode"
+"C-b" = "buffer_picker"
 "C-c" = ":quit"
 "C-f" = ["file_picker", "insert_mode"]
 "C-k" = ["kill_to_line_end", "insert_mode"]

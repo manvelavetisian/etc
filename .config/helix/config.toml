@@ -35,7 +35,7 @@ color-modes = true
 "C-up" = ["jump_view_up", "insert_mode"]
 "C-right" = ["jump_view_right", "insert_mode"]
 
-"C-c" = { "l" = "goto_line", "d" = "goto_definition", "y" = "goto_type_definition", "x" = "goto_reference" }
+"C-c" = { "l" = "goto_line", "d" = "goto_definition", "y" = "goto_type_definition", "x" = "goto_reference", "s" = "symbol_picker", "w" = "workspace_symbol_picker" }
 
 
 [keys.normal]
@@ -50,7 +50,7 @@ color-modes = true
 "A-o" = ["rotate_view", "insert_mode"]
 
 "C-b" = ["buffer_picker", "insert_mode"]
-"C-c" = { "l" = ["goto_line", "insert_mode"], "d" = ["goto_definition", "insert_mode"], "y" = ["goto_type_definition", "insert_mode"], "x" = ["goto_reference", "insert_mode"] }
+"C-c" = { "l" = ["goto_line", "insert_mode"], "d" = ["goto_definition", "insert_mode"], "y" = ["goto_type_definition", "insert_mode"], "x" = ["goto_reference", "insert_mode"], "w" = ["workspace_symbol_picker", "insert_mode"] }
 "C-f" = ["file_picker", "insert_mode"]
 "C-k" = ["kill_to_line_end", "insert_mode"]
 "C-g" = "insert_mode"

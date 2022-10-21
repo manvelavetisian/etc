@@ -6,8 +6,8 @@ theme = "monokai_pro_dark"
 true-color = true
 
 [keys.insert]
-"A-b" = "move_prev_word_start"
-"A-f" = "move_next_word_start"
+"A-b" = "move_prev_long_word_start"
+"A-f" = "move_next_long_word_start"
 "A-n" = "goto_next_paragraph"
 "A-p" = "goto_prev_paragraph"
 "A-x" = "command_mode"
@@ -17,15 +17,21 @@ true-color = true
 "C-x" = "normal_mode"
 
 [keys.normal]
-"A-b" = "move_prev_word_start"
-"A-f" = "move_next_word_start"
+"A-b" = "move_prev_long_word_start"
+"A-f" = "move_next_long_word_start"
 "A-n" = "goto_next_paragraph"
 "A-p" = "goto_prev_paragraph"
 "A-x" = "command_mode"
+"C-c" = ":quit"
+"C-f" = ["file_picker", "insert_mode"]
 "C-o" = ["rotate_view", "insert_mode"]
+"C-s" = [":write", "insert_mode"]
 "C-space" = "select_mode"
 "C-x" = "normal_mode"
-"C-y" = "paste_after"
+"C-y" = ["paste_after", "insert_mode"]
+"b" = "goto_next_buffer"
+"h" = "hsplit"
+"v" = "vsplit"
 
 [keys.select]
 "space" = "yank"

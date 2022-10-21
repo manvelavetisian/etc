@@ -5,10 +5,11 @@ theme = "monokai_pro_dark"
 true-color = true
 
 [keys.insert]
-"A-x" = "normal_mode"
+"A-x" = "command_mode"
 "A-p" = "goto_prev_paragraph"
 "A-n" = "goto_next_paragraph"
 "C-o" = ["rotate_view", "insert_mode"]
 
 [keys.normal]
 "C-o" = ["rotate_view", "insert_mode"]
+"A-x" = "command_mode"

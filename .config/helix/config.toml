@@ -19,12 +19,12 @@ true-color = true
 "C-x" = "normal_mode"
 
 [keys.normal]
-"A-b" = "move_prev_long_word_start"
-"A-f" = "move_next_long_word_start"
-"A-n" = "goto_next_paragraph"
-"A-p" = "goto_prev_paragraph"
+"A-b" = ["move_prev_long_word_start", "insert_mode"]
+"A-f" = ["move_next_long_word_start", "insert_mode"]
+"A-n" = ["goto_next_paragraph", "insert_mode"]
+"A-p" = ["goto_prev_paragraph", "insert_mode"]
 "A-x" = "command_mode"
-"C-b" = "buffer_picker"
+"C-b" = ["buffer_picker", "insert_mode"]
 "C-c" = ":quit"
 "C-f" = ["file_picker", "insert_mode"]
 "C-k" = ["kill_to_line_end", "insert_mode"]
@@ -35,11 +35,11 @@ true-color = true
 "C-space" = "select_mode"
 "C-x" = "normal_mode"
 "C-y" = ["paste_after", "insert_mode"]
-"b" = "goto_next_buffer"
-"h" = "hsplit"
-"v" = "vsplit"
+"b" = ["goto_next_buffer", "insert_mode"]
+"h" = ["hsplit", "insert_mode"]
+"v" = ["vsplit", "insert_mode"]
 "o" = ["rotate_view", "insert_mode"]
 
 [keys.select]
-"space" = "yank"
+"space" = ["yank", "insert_mode"]
 "C-g" = "insert_mode"

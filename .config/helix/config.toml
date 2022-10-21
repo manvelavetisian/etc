@@ -1,3 +1,4 @@
+# https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs
 
 theme = "monokai_pro_dark"
 
@@ -5,11 +6,26 @@ theme = "monokai_pro_dark"
 true-color = true
 
 [keys.insert]
-"A-x" = "command_mode"
-"A-p" = "goto_prev_paragraph"
+"A-b" = "move_prev_word_start"
+"A-f" = "move_next_word_start"
 "A-n" = "goto_next_paragraph"
+"A-p" = "goto_prev_paragraph"
+"A-x" = "command_mode"
 "C-o" = ["rotate_view", "insert_mode"]
+"C-space" = "select_mode"
+"C-y" = "paste_after"
+"C-x" = "normal_mode"
 
 [keys.normal]
-"C-o" = ["rotate_view", "insert_mode"]
+"A-b" = "move_prev_word_start"
+"A-f" = "move_next_word_start"
+"A-n" = "goto_next_paragraph"
+"A-p" = "goto_prev_paragraph"
 "A-x" = "command_mode"
+"C-o" = ["rotate_view", "insert_mode"]
+"C-space" = "select_mode"
+"C-x" = "normal_mode"
+"C-y" = "paste_after"
+
+[keys.select]
+"space" = "yank"

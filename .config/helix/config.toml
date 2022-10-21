@@ -4,6 +4,7 @@ theme = "monokai_pro_dark"
 
 [editor]
 true-color = true
+color-modes = true
 
 
 [keys.insert]

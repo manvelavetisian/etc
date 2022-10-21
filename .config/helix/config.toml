@@ -13,6 +13,7 @@ true-color = true
 "A-x" = "command_mode"
 "C-o" = ["rotate_view", "insert_mode"]
 "A-o" = ["rotate_view", "insert_mode"]
+"C-g" = "insert_mode"
 "C-space" = "select_mode"
 "C-y" = "paste_after"
 "C-x" = "normal_mode"
@@ -25,6 +26,8 @@ true-color = true
 "A-x" = "command_mode"
 "C-c" = ":quit"
 "C-f" = ["file_picker", "insert_mode"]
+"C-k" = ["kill_to_line_end", "insert_mode"]
+"C-g" = "insert_mode"
 "C-o" = ["rotate_view", "insert_mode"]
 "A-o" = ["rotate_view", "insert_mode"]
 "C-s" = [":write", "insert_mode"]
@@ -38,3 +41,4 @@ true-color = true
 
 [keys.select]
 "space" = "yank"
+"C-g" = "insert_mode"

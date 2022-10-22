@@ -26,7 +26,8 @@ color-modes = true
 "C-s" = "search"
 "C-x" = "normal_mode"
 "C-y" = "paste_after"
-"C-z" = "undo"
+
+"C-_" = "undo"
 
 "C-space" = "select_mode"
 
@@ -50,7 +51,7 @@ color-modes = true
 "A-o" = ["rotate_view", "insert_mode"]
 
 "C-b" = ["buffer_picker", "insert_mode"]
-"C-c" = { "l" = ["goto_line", "insert_mode"], "d" = ["goto_definition", "insert_mode"], "y" = ["goto_type_definition", "insert_mode"], "x" = ["goto_reference", "insert_mode"], "w" = ["workspace_symbol_picker", "insert_mode"] }
+"C-c" = ":quit"
 "C-f" = ["file_picker", "insert_mode"]
 "C-k" = ["kill_to_line_end", "insert_mode"]
 "C-g" = "insert_mode"
@@ -59,17 +60,19 @@ color-modes = true
 "C-s" = [":write", "insert_mode"]
 "C-x" = "normal_mode"
 "C-y" = ["paste_after", "insert_mode"]
-"C-z" = ["undo", "insert_mode"]
+
+"C-_" = ["undo", "insert_mode"]
 
 "C-space" = "select_mode"
 
-"p" = ["wonly", "insert_mode"]
 "b" = ["goto_next_buffer", "insert_mode"]
+"c" = ":quit"
 "h" = ["hsplit", "insert_mode"]
-"v" = ["vsplit", "insert_mode"]
+"k" = ":buffer-close"
 "o" = ["rotate_view", "insert_mode"]
-"q" = ":quit"
+"p" = ["wonly", "insert_mode"]
 "s" = [":write", "insert_mode"]
+"v" = ["vsplit", "insert_mode"]
 
 "left" = ["move_char_left", "insert_mode"]
 "down" = ["move_line_down", "insert_mode"]

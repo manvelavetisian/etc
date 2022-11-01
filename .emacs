@@ -55,9 +55,8 @@
 ;; tip: C-u C-x = to get a name of face under cursor and some additional info
 ;; tip: M-x customize-themes to browse themes
 ;; tip: select "linux console" color theme in terminal if background is grey
-(add-to-list 'custom-theme-load-path "~/etc/darkokai")
-(setq darkokai-mode-line-padding 1)
-(load-theme 'darkokai t)
+(add-to-list 'custom-theme-load-path "~/etc/monokai-emacs")
+(load-theme 'monokai t)
 
 ;; ivy, swiper, and counsel
 (use-package ivy)
@@ -101,10 +100,13 @@
 
 ;; sudo apt-get install clangd
 ;; pip3 install 'python-lsp-server[all]'
+;; cargo install rls
+;; rustup component add rls
 (use-package company)
 (use-package lsp-mode)
 (use-package lsp-ui)
 (use-package py-autopep8)
+(use-package rust-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -215,4 +217,4 @@
 (add-hook 'python-mode-hook 'my-programming-modes-hook)
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 (add-hook 'sh-mode-hook 'my-programming-modes-hook)
-
+(add-hook 'rust-mode-hook 'my-programming-modes-hook)

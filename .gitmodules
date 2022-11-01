@@ -1,4 +1,3 @@
-[submodule "darkokai"]
-	path = darkokai
-	url = https://github.com/mnvl/darkokai.git
-	branch = master
+[submodule "monokai-emacs"]
+	path = monokai-emacs
+	url = https://github.com/mnvl/monokai-emacs.git

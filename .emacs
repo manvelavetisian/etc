@@ -103,8 +103,7 @@
 ;; cargo install rls
 ;; rustup component add rls
 (use-package company)
-(use-package lsp-mode)
-(use-package lsp-ui)
+(use-package eglot)
 (use-package py-autopep8)
 (use-package rust-mode)
 
@@ -184,20 +183,20 @@
 
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
-  (lsp)
+  (eglot-ensure)
+
   (local-set-key (kbd "TAB") 'company-indent-or-complete-common)
   (local-set-key (kbd "RET") 'newline-and-indent)
 
-  (local-set-key (kbd "C-c S") 'lsp-describe-session)
+  (local-set-key (kbd "C-c S") 'eglot-list-connections)
+  (local-set-key (kbd "C-c a") 'eglot-code-actions)
   (local-set-key (kbd "C-c c") 'company-complete)
-  (local-set-key (kbd "C-c d") 'lsp-find-definition)
-  (local-set-key (kbd "C-c f") 'lsp-format-buffer)
-  (local-set-key (kbd "C-c h") 'lsp-symbol-highlight)
-  (local-set-key (kbd "C-c i") 'lsp-goto-implementation)
-  (local-set-key (kbd "C-c j") 'lsp-goto-type-definition)
-  (local-set-key (kbd "C-c r") 'lsp-rename)
-  (local-set-key (kbd "C-c w") 'lsp-describe-thing-at-point)
-  (local-set-key (kbd "C-c x") 'lsp-find-references)
+  (local-set-key (kbd "C-c d") 'xref-find-definitions)
+  (local-set-key (kbd "C-c f") 'eglot-format-buffer)
+  (local-set-key (kbd "C-c i") 'eglot-find-implementation)
+  (local-set-key (kbd "C-c j") 'eglot-find-declaration)
+  (local-set-key (kbd "C-c r") 'eglot-rename)
+  (local-set-key (kbd "C-c x") 'xref-find-references)
 
   (local-set-key (kbd "M-q") 'ff-find-other-file))
 

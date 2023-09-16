@@ -26,6 +26,7 @@
 ;; sudo fc-cache -fv
 (if (eq system-type 'windows-nt) (set-frame-font "Consolas-14"))
 (if (eq system-type 'gnu/linux) (set-frame-font "Inconsolata-14"))
+(if (eq system-type 'darwin) (set-frame-font "Menlo-18"))
 
 ;; text editing
 (fset 'yes-or-no-p 'y-or-n-p)

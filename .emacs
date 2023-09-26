@@ -53,6 +53,9 @@
 (setq-default save-place 1)
 (setq-default show-trailing-whitespace 1)
 
+(use-package neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; tip: C-u C-x = to get a name of face under cursor and some additional info
 ;; tip: M-x customize-themes to browse themes
 ;; tip: select "linux console" color theme in terminal if background is grey
@@ -82,14 +85,11 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 
-(global-set-key (kbd "C-<down>") 'windmove-down)
-(global-set-key (kbd "C-<left>") 'windmove-left)
-(global-set-key (kbd "C-<right>") 'windmove-right)
-(global-set-key (kbd "C-<up>") 'windmove-up)
-(global-set-key (kbd "M-[ a") 'windmove-up)
-(global-set-key (kbd "M-[ b") 'windmove-down)
-(global-set-key (kbd "M-[ c") 'windmove-right)
-(global-set-key (kbd "M-[ d") 'windmove-left)
+(global-set-key (kbd "M-;") 'windmove-up)
+(global-set-key (kbd "M-'") 'windmove-down)
+(global-set-key (kbd "M-,") 'windmove-left)
+(global-set-key (kbd "M-.") 'windmove-right)
+(global-set-key (kbd "M-/") 'other-window)
 
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)

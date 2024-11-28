@@ -190,6 +190,7 @@
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
   (eglot-ensure)
+  (setq eglot-report-progress nil)
 
   (local-set-key (kbd "TAB") 'company-indent-or-complete-common)
   (local-set-key (kbd "RET") 'newline-and-indent)

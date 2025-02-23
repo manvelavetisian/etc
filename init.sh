@@ -1,42 +1,30 @@
 #! /bin/sh -ex
 
-rm -rf $HOME/.oh-my-zsh
+case "$(uname -s)" in
+    Linux*)
+        sudo apt-get install fish mc emacs tmux clangd git-gui
+    ;;
 
-sh -c "CHSH=no RUNZSH=no KEEP_ZSHRC=yes $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    Darwin*)
+        brew install fish mc emacs tmux llvm git-gui
+    ;;
 
-for plugin in zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
-do
-    git clone https://github.com/zsh-users/$plugin.git $HOME/.oh-my-zsh/custom/plugins/$plugin
-done
-
+    *)
+        echo "unknown OS"
+        exit 1
+esac
 
 rm -rf $HOME/.tmux/plugins/tpm
-
 mkdir -p ~/.tmux/plugins
-
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 
-for x in .zshrc .emacs .jupyter .gdbinit .tmux.conf .gitconfig
+for x in .emacs .jupyter .gdbinit .tmux.conf .gitconfig
 do
     ln -f -s $HOME/etc/$x $HOME/$x
 done
 
-case "$(uname -s)" in
-    Linux*)
-        sudo apt-get install clangd
-    ;;
+ln -f -s $HOME/etc/$x $HOME/.config/fish
 
-    Darwin*)
-        brew install llvm
-    ;;
-
-    *)
-        echo "unknown OS, clangd was not installed"
-esac
-
-pip3 install 'python-lsp-server[all]'
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install rls
-rustup component add rls
+# need to use virtual envs now
+# pip3 install 'python-lsp-server[all]'

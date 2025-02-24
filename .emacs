@@ -64,8 +64,6 @@
 ;; tip: C-u C-x = to get a name of face under cursor and some additional info
 ;; tip: M-x customize-themes to browse themes
 ;; tip: select "linux console" color theme in terminal if background is grey
-(add-to-list 'custom-theme-load-path "~/etc/monokai-emacs")
-(load-theme 'monokai t)
 
 ;; ivy, swiper, and counsel
 (use-package ivy)
